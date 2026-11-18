@@ -1,0 +1,14 @@
+﻿@model List<TheLoai>
+<ul class="menu">
+	<li class="active"><a asp-action="Index" asp-controller="Home">LaiDacDuc</a></li>
+	@foreach (var item in Model)
+	{
+		<li>
+			<a href="#" class="menu-tl"
+			data-id="@item.MaTl"
+			   data-url="@Url.Action("SachTheoTheLoai", "Home", new { maTl = item.MaTl })">
+				@item.TenTl
+				</a>
+		</li>
+	}
+</ul>
